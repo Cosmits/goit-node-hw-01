@@ -18,12 +18,10 @@ async function getContactById(contactId) {
     contact => contact.id === contactId);
 
   return foundContact || null;
-
 }
 
 
 async function addContact(name, email, phone) {
-
   if (!name && !email && !phone) return null;
 
   const id = uuidv1();
@@ -52,7 +50,6 @@ async function updateContact(contactId, name, email, phone) {
 
 
 async function removeContact(contactId) {
-
   const allContacts = await listContacts();
   const indexEl = allContacts.findIndex(el => el.id === contactId);
 
@@ -64,8 +61,6 @@ async function removeContact(contactId) {
 }
 
 
-
-
 export default {
   listContacts,
   getContactById,
@@ -73,5 +68,3 @@ export default {
   updateContact,
   removeContact,
 };
-
-// console.table(await listContacts());
